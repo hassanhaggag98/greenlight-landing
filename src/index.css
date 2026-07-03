@@ -1,0 +1,266 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary-green: var(--primary-green);
+  --color-secondary-green: var(--secondary-green);
+  --color-dark-navy: var(--dark-navy);
+  --color-navy-mid: var(--navy-mid);
+  --color-gold: var(--gold);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-muted: var(--surface-muted);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-on-dark: var(--accent-on-dark);
+  --font-sans: 'Inter', 'Cairo', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Inter', 'Cairo', system-ui, -apple-system, sans-serif;
+  --font-ar: 'Cairo', 'Tahoma', system-ui, sans-serif;
+  --font-en: 'Inter', system-ui, sans-serif;
+}
+
+/* ── Light theme ── */
+:root {
+  --primary-green: #156b42;
+  --secondary-green: #1a8050;
+  --dark-navy: #0a1628;
+  --navy-mid: #122640;
+  --gold: #b8941f;
+  --surface: #f5f7fa;
+  --surface-elevated: #ffffff;
+  --surface-muted: #ebeef3;
+  --foreground: #0d1b2a;
+  --muted: #5a6d80;
+  --border: #d4dce6;
+  --accent-soft: #e6f2eb;
+  --accent-on-dark: #6ecf98;
+  --hero-from: #0a1628;
+  --hero-via: #122640;
+  --hero-to: #156b42;
+  --ring: rgba(21, 107, 66, 0.28);
+  --shadow-sm: 0 1px 3px rgba(10, 22, 40, 0.07);
+  --shadow-md: 0 4px 16px rgba(10, 22, 40, 0.09);
+  --shadow-lg: 0 12px 40px rgba(10, 22, 40, 0.11);
+
+  color-scheme: light;
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Dark theme ── */
+.dark {
+  --primary-green: #3cb371;
+  --secondary-green: #52c987;
+  --dark-navy: #060e18;
+  --navy-mid: #0c1a2e;
+  --gold: #d4af37;
+  --surface: #0a1525;
+  --surface-elevated: #122338;
+  --surface-muted: #0e1e32;
+  --foreground: #e4eaf0;
+  --muted: #8fa3b8;
+  --border: #1c3048;
+  --accent-soft: #0f2418;
+  --accent-on-dark: #6ecf98;
+  --hero-from: #060e18;
+  --hero-via: #0c1a2e;
+  --hero-to: #156b42;
+  --ring: rgba(60, 179, 113, 0.35);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.5);
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  background-color: var(--surface);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html[dir='rtl'] body {
+  font-family: var(--font-ar);
+  letter-spacing: 0;
+}
+
+html[dir='ltr'] body {
+  font-family: var(--font-en);
+}
+
+#root {
+  min-height: 100dvh;
+}
+
+[dir='rtl'] {
+  text-align: right;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+/* Dark hero/CTA surfaces always use light text, regardless of theme */
+.hero-gradient,
+.banking-gradient,
+.cta-gradient {
+  color: #ffffff;
+}
+
+.hero-gradient :is(h1, h2, h3, h4, h5, h6),
+.banking-gradient :is(h1, h2, h3, h4, h5, h6),
+.cta-gradient :is(h1, h2, h3, h4, h5, h6),
+.footer-gradient :is(h1, h2, h3, h4, h5, h6) {
+  color: inherit;
+}
+
+p {
+  line-height: 1.7;
+}
+
+/* ── Reusable surfaces ── */
+.section-alt {
+  background-color: var(--surface-muted);
+}
+
+.section-elevated {
+  background-color: var(--surface-elevated);
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, var(--hero-from) 0%, var(--hero-via) 55%, color-mix(in srgb, var(--hero-to) 40%, var(--hero-via)) 100%);
+}
+
+.banking-gradient {
+  background: linear-gradient(135deg, var(--dark-navy) 0%, var(--navy-mid) 60%, color-mix(in srgb, var(--primary-green) 25%, var(--navy-mid)) 100%);
+}
+
+.cta-gradient {
+  background: linear-gradient(135deg, var(--primary-green) 0%, color-mix(in srgb, var(--secondary-green) 80%, var(--primary-green)) 100%);
+}
+
+.footer-gradient {
+  background: linear-gradient(180deg, var(--navy-mid) 0%, var(--dark-navy) 100%);
+}
+
+.map-canvas {
+  background: linear-gradient(145deg, #132a45 0%, #0a1628 50%, #0c1f35 100%);
+  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+:root .map-canvas {
+  border-color: color-mix(in srgb, var(--primary-green) 22%, var(--border));
+}
+
+.dark .map-canvas {
+  border-color: var(--border);
+  box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.stat-value {
+  display: flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  font-size: 1.875rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--primary-green);
+}
+
+.stat-value-inline {
+  justify-content: flex-start;
+  min-height: auto;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .stat-value {
+    min-height: 3rem;
+    font-size: 2.25rem;
+  }
+
+  .stat-value-inline {
+    font-size: 1.875rem;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary-green);
+  outline-offset: 2px;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes radar-sweep {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes route-flow {
+  from { stroke-dashoffset: 24; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes hub-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.8); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-radar-sweep,
+  .animate-route-flow,
+  .animate-hub-pulse,
+  .nav-ticker-track {
+    animation: none !important;
+  }
+}
+
+.nav-ticker-track {
+  animation: nav-ticker 28s linear infinite;
+}
+
+[dir='rtl'] .nav-ticker-track {
+  animation-direction: reverse;
+}
+
+@keyframes nav-ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
