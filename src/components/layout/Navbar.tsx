@@ -20,6 +20,7 @@ const SECONDARY_NAV = [
   { to: ROUTES.banking, key: 'banking' },
   { to: ROUTES.certificates, key: 'certificates' },
   { to: ROUTES.news, key: 'news' },
+  { to: ROUTES.faqs, key: 'faqs' },
 ] as const
 
 const ALL_NAV = [...PRIMARY_NAV, ...SECONDARY_NAV]

@@ -10,6 +10,7 @@ import {
   Clock3,
   Compass,
   FileCheck2,
+  Factory,
   Globe2,
   PackageCheck,
   Radar,
@@ -17,7 +18,6 @@ import {
   ShieldCheck,
   Ship,
   Truck,
-  Warehouse,
 } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { SEO } from '@/components/common'
@@ -43,10 +43,10 @@ export default function HomePage() {
   ]
 
   const solutions: LandingCard[] = [
-    { title: t('home.fallbackService1Title'), description: t('home.fallbackService1Desc'), icon: Ship },
-    { title: t('home.fallbackService2Title'), description: t('home.fallbackService2Desc'), icon: FileCheck2 },
-    { title: t('home.fallbackService3Title'), description: t('home.fallbackService3Desc'), icon: Truck },
-    { title: t('home.landingWarehousingTitle'), description: t('home.landingWarehousingDesc'), icon: Warehouse },
+    { title: t('home.fallbackService1Title'), description: t('home.fallbackService1Desc'), icon: Globe2 },
+    { title: t('home.fallbackService2Title'), description: t('home.fallbackService2Desc'), icon: Truck },
+    { title: t('home.fallbackService3Title'), description: t('home.fallbackService3Desc'), icon: Boxes },
+    { title: t('home.fallbackService4Title'), description: t('home.fallbackService4Desc'), icon: Factory },
   ]
 
   const operations = [

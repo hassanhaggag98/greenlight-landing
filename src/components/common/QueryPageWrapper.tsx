@@ -1,13 +1,13 @@
 import type { ReactNode } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { publicApi } from '@/api/public.api'
-import { ErrorState, LoadingSpinner } from '@/components/ui'
+import { LoadingSpinner } from '@/components/ui'
 
 interface QueryPageWrapperProps {
   queryKey: readonly unknown[]
   queryFn: () => Promise<unknown>
   children: (data: never) => ReactNode
   loadingMinHeight?: string
+  fallbackData?: unknown
 }
 
 export function QueryPageWrapper({
@@ -15,8 +15,9 @@ export function QueryPageWrapper({
   queryFn,
   children,
   loadingMinHeight = '40vh',
+  fallbackData,
 }: QueryPageWrapperProps) {
-  const { data, isLoading, isError, refetch } = useQuery({
+  const { data, isLoading, isError } = useQuery({
     queryKey,
     queryFn,
   })
@@ -29,16 +30,18 @@ export function QueryPageWrapper({
     )
   }
 
-  if (isError) {
-    return <ErrorState onRetry={() => refetch()} />
+  const resolvedData = isError ? fallbackData : data
+
+  if (resolvedData == null) {
+    return null
   }
 
-  return <>{children(data as never)}</>
+  return <>{children(resolvedData as never)}</>
 }
 
 export function usePublicSettings() {
   return useQuery({
     queryKey: ['public', 'settings'],
-    queryFn: () => publicApi.getSettings(),
+    queryFn: () => import('@/api/public.api').then(({ publicApi }) => publicApi.getSettings()),
   })
 }

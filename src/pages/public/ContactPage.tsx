@@ -5,9 +5,10 @@ import { z } from 'zod'
 import { useTranslation } from 'react-i18next'
 import toast from 'react-hot-toast'
 import { publicApi } from '@/api/public.api'
-import { PageHeader, SEO } from '@/components/common'
+import { ContactInfo, PageHeader, SEO } from '@/components/common'
+import { SocialLinksSection } from '@/components/sections'
 import { Button, Card, CardContent, Input, PhoneInput, Textarea } from '@/components/ui'
-import { ROUTES } from '@/constants'
+import { CONTACT_EMAIL, ROUTES } from '@/constants'
 
 type ContactForm = {
   name: string
@@ -15,6 +16,14 @@ type ContactForm = {
   phone?: string
   subject: string
   message: string
+}
+
+function buildMailtoLink(data: ContactForm) {
+  const subject = encodeURIComponent(data.subject)
+  const body = encodeURIComponent(
+    `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone ?? '—'}\n\n${data.message}`,
+  )
+  return `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
 }
 
 export default function ContactPage() {
@@ -46,7 +55,9 @@ export default function ContactPage() {
       toast.success(t('contact.success'))
       reset()
     } catch {
-      toast.error(t('common.error'))
+      window.location.href = buildMailtoLink(data)
+      toast.success(t('contact.fallbackSuccess'))
+      reset()
     }
   }
 
@@ -58,7 +69,17 @@ export default function ContactPage() {
         subtitle={t('contact.subtitle')}
         breadcrumbs={[{ label: t('nav.contact'), href: ROUTES.contact }]}
       />
-      <div className="mx-auto max-w-xl px-4 py-16 sm:px-6 lg:px-8">
+
+      <SocialLinksSection />
+
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 pb-16 sm:px-6 lg:grid-cols-[1fr_1.2fr] lg:px-8">
+        <Card>
+          <CardContent className="pt-6">
+            <h2 className="mb-5 text-lg font-semibold text-foreground">{t('contact.infoTitle')}</h2>
+            <ContactInfo />
+          </CardContent>
+        </Card>
+
         <Card>
           <CardContent className="pt-6">
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">

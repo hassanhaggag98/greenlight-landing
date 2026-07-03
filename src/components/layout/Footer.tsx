@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { Mail, MapPin, Phone } from 'lucide-react'
-import { Logo } from '@/components/common'
-import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_TEL, ROUTES } from '@/constants'
+import { Logo, ContactInfo, SocialLinksBar } from '@/components/common'
+import { ROUTES } from '@/constants'
 
 export function Footer() {
   const { t } = useTranslation()
@@ -17,6 +16,7 @@ export function Footer() {
             <span className="min-w-0 text-sm font-semibold sm:text-base">{t('common.appName')}</span>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-white/70">{t('footer.description')}</p>
+          <SocialLinksBar className="pt-3" showLabel />
         </div>
 
         <div>
@@ -26,27 +26,13 @@ export function Footer() {
             <li><Link to={ROUTES.about} className="transition-colors hover:text-gold">{t('nav.about')}</Link></li>
             <li><Link to={ROUTES.services} className="transition-colors hover:text-gold">{t('nav.services')}</Link></li>
             <li><Link to={ROUTES.contact} className="transition-colors hover:text-gold">{t('nav.contact')}</Link></li>
+            <li><Link to={ROUTES.faqs} className="transition-colors hover:text-gold">{t('nav.faqs')}</Link></li>
           </ul>
         </div>
 
         <div className="sm:col-span-2 lg:col-span-1">
-          <h3 className="mb-3 text-sm font-semibold text-gold">{t('footer.contactUs')}</h3>
-          <ul className="space-y-3 text-sm text-white/75">
-            <li className="flex items-start gap-2">
-              <Mail className="mt-0.5 size-4 shrink-0 text-accent-on-dark" />
-              <a href={`mailto:${CONTACT_EMAIL}`} className="break-all transition-colors hover:text-gold">
-                {CONTACT_EMAIL}
-              </a>
-            </li>
-            <li className="flex items-center gap-2">
-              <Phone className="size-4 shrink-0 text-accent-on-dark" />
-              <a href={`tel:${CONTACT_PHONE_TEL}`} className="transition-colors hover:text-gold">{CONTACT_PHONE}</a>
-            </li>
-            <li className="flex items-start gap-2">
-              <MapPin className="mt-0.5 size-4 shrink-0 text-accent-on-dark" />
-              <span>{t('footer.location')}</span>
-            </li>
-          </ul>
+          <h3 className="mb-4 text-sm font-semibold text-gold">{t('contact.infoTitle')}</h3>
+          <ContactInfo variant="dark" />
         </div>
       </div>
 

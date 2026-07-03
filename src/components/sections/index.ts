@@ -1,3 +1,4 @@
+export { SocialLinksSection } from './SocialLinksSection'
 export { AnimatedCounter } from './AnimatedCounter'
 export { HeroBanner } from './HeroBanner'
 export { HeroSection } from './HeroSection'

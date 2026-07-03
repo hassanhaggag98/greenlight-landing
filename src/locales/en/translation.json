@@ -24,6 +24,7 @@
     "banking": "Banking",
     "certificates": "Certificates",
     "news": "News",
+    "faqs": "FAQs",
     "contact": "Contact",
     "more": "More",
     "getQuote": "Get Quote",
@@ -40,11 +41,11 @@
     }
   },
   "footer": {
-    "description": "Since 1996, your partner for import, customs clearance, and shipping — from the world to Egypt.",
+    "description": "A simple partnership company since 1996 — executing work with precision and quality standards.",
     "quickLinks": "Quick Links",
     "contactUs": "Contact Us",
     "rights": "All rights reserved.",
-    "location": "Alexandria, Egypt"
+    "location": "Egypt – New Damietta, Al Hawey 1, Magowerya"
   },
   "home": {
     "since1996": "Since 1996 · Egypt",
@@ -120,12 +121,14 @@
     "landingExploreRoutes": "Explore shipping solutions",
     "landingProcessTitle": "Few steps, organized execution",
     "landingFinalBadge": "Start your shipment now",
-    "fallbackService1Title": "Sea Freight & Containers",
-    "fallbackService1Desc": "FCL & LCL import from global ports to Egypt's ports.",
-    "fallbackService2Title": "Customs Clearance",
-    "fallbackService2Desc": "Fast, accurate customs procedures and permits.",
-    "fallbackService3Title": "Land Transport & Logistics",
-    "fallbackService3Desc": "Cargo delivery from port to warehouse or client.",
+    "fallbackService1Title": "International Trade",
+    "fallbackService1Desc": "Global trade solutions connecting suppliers and markets across borders.",
+    "fallbackService2Title": "Logistics Services",
+    "fallbackService2Desc": "Integrated shipping, customs clearance, warehousing, and transport.",
+    "fallbackService3Title": "Factory Production Raw Materials Import",
+    "fallbackService3Desc": "Sourcing and importing production inputs and industrial raw materials for factories.",
+    "fallbackService4Title": "Detergent Factory Planning, Design & Construction",
+    "fallbackService4Desc": "Feasibility studies, engineering design, and turnkey detergent plant construction.",
     "fallbackTestimonial1Content": "Green Light saved us time on customs clearance and container shipping — highly professional.",
     "fallbackTestimonial1Name": "Mohamed Hassan",
     "fallbackTestimonial1Role": "Procurement Manager",
@@ -144,20 +147,26 @@
     "fallbackCert4": "Chamber Member"
   },
   "about": {
-    "title": "About Green Light Group",
-    "subtitle": "Since 1996, serving Egyptian importers with shipping, customs clearance, and logistics.",
-    "mission": "Our Mission",
-    "vision": "Our Vision",
-    "missionText": "Since 1996, we support importers across Egypt with sea freight, customs clearance, and logistics — from global suppliers to your door.",
-    "visionText": "To be Egypt's leading import partner, delivering your cargo from any port worldwide to your doorstep."
+    "title": "About Green Light",
+    "subtitle": "A simple partnership company founded in 1996",
+    "mission": "Who We Are",
+    "vision": "Our Clients",
+    "missionText": "Green Light is a simple partnership company founded in 1996. From the outset, the company has ensured it has the competencies to manage and execute work across all fields with precision and full adherence to quality standards.",
+    "visionText": "This has had a profound impact on building the company's client base since its founding, through mutual trust and successful business experiences."
   },
   "services": {
     "title": "Our Services",
-    "subtitle": "Sea freight, containers, customs clearance, and land transport for importing through Egypt's ports."
+    "subtitle": "International trade, logistics, raw materials import, and detergent factory construction."
   },
   "industries": {
     "title": "Industries We Serve",
-    "subtitle": "Expertise across diverse sectors and markets."
+    "subtitle": "Expertise across diverse sectors and markets.",
+    "fallback1Name": "Food & Beverage",
+    "fallback1Desc": "Import of food products, beverages, and consumer goods through Egyptian ports.",
+    "fallback2Name": "Construction & Building Materials",
+    "fallback2Desc": "Steel, cement, tiles, and construction supplies for projects across Egypt.",
+    "fallback3Name": "Industrial & Manufacturing",
+    "fallback3Desc": "Machinery, raw materials, and industrial equipment for factories and plants."
   },
   "logistics": {
     "title": "Logistics & Shipping",
@@ -188,12 +197,45 @@
   "contact": {
     "title": "Get in Touch",
     "subtitle": "We'd love to hear from you. Send us a message and we'll respond promptly.",
+    "infoTitle": "Contact Information",
+    "addressLabel": "Address",
+    "phonesLabel": "Phone Numbers",
+    "whatsappLabel": "WhatsApp",
+    "websiteLabel": "Website",
+    "emailLabel": "Email",
     "name": "Full Name",
     "email": "Email Address",
     "phone": "Phone Number",
     "subject": "Subject",
     "message": "Message",
-    "success": "Your message has been sent successfully."
+    "success": "Your message has been sent successfully.",
+    "fallbackSuccess": "Your message is ready. Your email app will open to send it.",
+    "socialBadge": "Stay Connected",
+    "socialTitle": "Follow Us on Social Media",
+    "socialSubtitle": "Connect with Green Light on WhatsApp, Facebook, Instagram, and LinkedIn.",
+    "socialEmailCta": "Email Us Directly",
+    "socialCtaWhatsapp": "Message us directly on WhatsApp",
+    "socialCtaFacebook": "Follow our latest updates on Facebook",
+    "socialCtaInstagram": "See our activity on Instagram",
+    "socialCtaLinkedin": "Connect professionally on LinkedIn"
+  },
+  "faqs": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to the most common questions about Green Light",
+    "item1Question": "What services does Green Light provide?",
+    "item1Answer": "We offer international trade, logistics services, factory raw materials import, and planning, design, and construction of detergent factories — plus shipping, customs clearance, and shipment tracking.",
+    "item2Question": "How long has Green Light been in business?",
+    "item2Answer": "Green Light is a simple partnership company founded in 1996, with extensive experience executing work with precision and full adherence to quality standards.",
+    "item3Question": "How do I request a quote?",
+    "item3Answer": "Fill out the quote request form on our website, contact us on WhatsApp at 00201002974960, or email info@greenlight-eg.com.",
+    "item4Question": "Do you handle customs clearance and shipping?",
+    "item4Answer": "Yes. We provide integrated logistics including sea and land freight, customs clearance, warehousing, and delivery to your warehouse or doorstep via Egypt's ports.",
+    "item5Question": "Do you import raw materials for factories?",
+    "item5Answer": "Yes. We specialize in importing production inputs and industrial raw materials for factories from trusted global suppliers, with full shipment tracking until delivery.",
+    "item6Question": "Do you build detergent factories?",
+    "item6Answer": "Yes. We offer planning, engineering design, and turnkey construction of detergent plants — from feasibility studies through execution and commissioning.",
+    "item7Question": "Where is your office located?",
+    "item7Answer": "Our office is in Egypt – New Damietta, Al Hawey 1, Magowerya. Call us at 00201203004406 or 00201002974960."
   },
   "quote": {
     "title": "Request a Shipping Quote",

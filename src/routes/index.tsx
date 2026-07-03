@@ -18,6 +18,7 @@ const ContactPage = lazy(() => import('@/pages/public/ContactPage'))
 const RequestQuotePage = lazy(() => import('@/pages/public/RequestQuotePage'))
 const PrivacyPolicyPage = lazy(() => import('@/pages/public/PrivacyPolicyPage'))
 const TermsPage = lazy(() => import('@/pages/public/TermsPage'))
+const FaqsPage = lazy(() => import('@/pages/public/FaqsPage'))
 const NotFoundPage = lazy(() => import('@/pages/public/NotFoundPage'))
 
 function PageLoader() {
@@ -45,6 +46,7 @@ export function AppRoutes() {
             <Route path={ROUTES.news} element={<NewsPage />} />
             <Route path={ROUTES.newsDetail} element={<NewsDetailPage />} />
             <Route path={ROUTES.contact} element={<ContactPage />} />
+            <Route path={ROUTES.faqs} element={<FaqsPage />} />
             <Route path={ROUTES.quote} element={<RequestQuotePage />} />
             <Route path={ROUTES.privacy} element={<PrivacyPolicyPage />} />
             <Route path={ROUTES.terms} element={<TermsPage />} />

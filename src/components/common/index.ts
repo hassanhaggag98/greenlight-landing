@@ -1,3 +1,5 @@
+export { ContactInfo } from './ContactInfo'
+export { SocialLinksBar } from './SocialLinksBar'
 export { NavbarTicker } from './NavbarTicker'
 export { Breadcrumb } from './Breadcrumb'
 export { LanguageSwitcher } from './LanguageSwitcher'

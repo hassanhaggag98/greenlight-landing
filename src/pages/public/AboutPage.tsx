@@ -1,16 +1,20 @@
 import { useTranslation } from 'react-i18next'
 import { useQuery } from '@tanstack/react-query'
 import { publicApi } from '@/api/public.api'
+import { getStaticAbout } from '@/data/staticFallbacks'
 import { PageHeader, SEO } from '@/components/common'
-import { Card, CardContent, ErrorState, LoadingSpinner } from '@/components/ui'
+import { Card, CardContent, LoadingSpinner } from '@/components/ui'
 import { ROUTES } from '@/constants'
 
 export default function AboutPage() {
   const { t, i18n } = useTranslation()
-  const { data, isLoading, isError, refetch } = useQuery({
+  const fallback = getStaticAbout(t)
+  const { data, isLoading } = useQuery({
     queryKey: ['public', 'about', i18n.language],
     queryFn: () => publicApi.getAbout(),
   })
+
+  const about = { ...fallback, ...data }
 
   if (isLoading) {
     return (
@@ -20,16 +24,12 @@ export default function AboutPage() {
     )
   }
 
-  if (isError) {
-    return <ErrorState onRetry={() => refetch()} />
-  }
-
   return (
     <>
-      <SEO title={t('about.title')} description={t('about.subtitle')} />
+      <SEO title={about.title} description={about.description} />
       <PageHeader
-        title={data?.title ?? t('about.title')}
-        subtitle={data?.description ?? t('about.subtitle')}
+        title={about.title}
+        subtitle={about.description}
         breadcrumbs={[{ label: t('nav.about'), href: ROUTES.about }]}
       />
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -37,23 +37,19 @@ export default function AboutPage() {
           <Card>
             <CardContent className="pt-6">
               <h2 className="text-lg font-semibold text-primary-green">{t('about.mission')}</h2>
-              <p className="mt-2 text-muted">
-                {data?.mission || t('about.missionText')}
-              </p>
+              <p className="mt-2 text-muted">{about.mission}</p>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="pt-6">
               <h2 className="text-lg font-semibold text-gold">{t('about.vision')}</h2>
-              <p className="mt-2 text-muted">
-                {data?.vision || t('about.visionText')}
-              </p>
+              <p className="mt-2 text-muted">{about.vision}</p>
             </CardContent>
           </Card>
         </div>
-        {data?.values && data.values.length > 0 && (
+        {about.values && about.values.length > 0 && (
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
-            {data.values.map((v) => (
+            {about.values.map((v) => (
               <Card key={v.title}>
                 <CardContent className="pt-6">
                   <h3 className="font-semibold text-foreground">{v.title}</h3>
