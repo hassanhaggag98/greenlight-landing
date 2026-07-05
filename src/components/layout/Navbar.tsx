@@ -78,7 +78,7 @@ export function Navbar() {
   const linkClass = (isActive: boolean, compact = false) =>
     cn(
       'rounded-lg font-medium transition-colors whitespace-nowrap',
-      compact ? 'px-2 py-1.5 text-xs 2xl:px-2.5 2xl:py-2 2xl:text-sm' : 'px-2.5 py-2 text-sm',
+      compact ? 'px-3 py-2 text-sm' : 'px-2.5 py-2 text-sm',
       isActive
         ? 'bg-accent-soft text-primary-green'
         : 'text-muted hover:bg-surface-muted hover:text-foreground',
@@ -101,14 +101,14 @@ export function Navbar() {
 
           <NavbarTicker className="min-w-0 flex-1 xl:hidden" />
 
-          <nav className="hidden min-w-0 flex-1 items-center justify-center gap-0.5 xl:flex 2xl:gap-1">
+          <nav className="hidden min-w-0 flex-1 items-center justify-center gap-1 xl:flex">
             {PRIMARY_NAV.map((link) => (
               <NavLink key={link.to} to={link.to} className={({ isActive }) => linkClass(isActive, true)}>
                 {t(`nav.${link.key}`)}
               </NavLink>
             ))}
 
-            <div ref={moreRef} className="relative 2xl:hidden">
+            <div ref={moreRef} className="relative">
               <button
                 type="button"
                 onClick={() => setMoreOpen((open) => !open)}
@@ -149,26 +149,13 @@ export function Navbar() {
                 </div>
               )}
             </div>
-
-            <div className="hidden items-center gap-0.5 2xl:flex 2xl:gap-1">
-              {SECONDARY_NAV.map((link) => (
-                <NavLink key={link.to} to={link.to} className={({ isActive }) => linkClass(isActive, true)}>
-                  {t(`nav.${link.key}`)}
-                </NavLink>
-              ))}
-            </div>
           </nav>
 
-          <div className="hidden shrink-0 items-center gap-1.5 xl:flex">
+          <div className="hidden shrink-0 items-center gap-1.5 xl:flex 2xl:gap-2">
             <LanguageSwitcher />
             <ThemeSwitcher />
-            <Link to={ROUTES.quote} className="hidden 2xl:block">
+            <Link to={ROUTES.quote}>
               <Button size="sm" variant="outline" className="whitespace-nowrap">
-                {t('quote.title')}
-              </Button>
-            </Link>
-            <Link to={ROUTES.quote} className="2xl:hidden">
-              <Button size="sm" variant="outline" className="whitespace-nowrap px-2.5 text-xs">
                 {t('nav.getQuote')}
               </Button>
             </Link>

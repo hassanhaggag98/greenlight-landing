@@ -33,11 +33,11 @@ export const CONTACT_WEBSITE = 'www.greenlight-eg.com'
 export const CONTACT_WEBSITE_URL = 'https://www.greenlight-eg.com'
 
 export const CONTACT_PHONES = [
-  { display: '00201203004406', tel: '+201203004406' },
-  { display: '00201002974960', tel: '+201002974960' },
+  { display: '+201203004406', tel: '+201203004406' },
+  { display: '+201002974960', tel: '+201002974960' },
 ] as const
 
 export const WHATSAPP_NUMBER = '201002974960'
-export const WHATSAPP_DISPLAY = '00201002974960'
+export const WHATSAPP_DISPLAY = '+201002974960'
 
 export const DASHBOARD_URL = import.meta.env.VITE_DASHBOARD_URL ?? ''

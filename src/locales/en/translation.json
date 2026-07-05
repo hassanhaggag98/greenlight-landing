@@ -58,6 +58,21 @@
     "heroLandTransport": "Land Transport",
     "heroPortLabel": "Shipping Hub",
     "heroPortHub": "🇪🇬 Egypt Ports",
+    "heroSlide1Alt": "Integrated global logistics — sea, air, and land freight",
+    "heroSlide1Title": "Integrated Freight Solutions",
+    "heroSlide1Caption": "Sea, air, and land movement in one clear route from supplier to client.",
+    "heroSlide2Alt": "International shipping and cargo transport worldwide",
+    "heroSlide2Title": "Global Cargo Connections",
+    "heroSlide2Caption": "Shipment handling and follow-up from global markets to Egyptian ports.",
+    "heroSlide3Alt": "Multi-modal freight at port — sea, air, and land transport",
+    "heroSlide3Title": "Coordinated Port Operations",
+    "heroSlide3Caption": "Containers, trucks, and vessels managed together to reduce waiting time.",
+    "heroSlide4Alt": "Container ship loaded with cargo at sunset",
+    "heroSlide4Title": "Container Sea Freight",
+    "heroSlide4Caption": "Shipping lines and containers tracked until arrival and unloading.",
+    "heroSlide5Alt": "Busy shipping port with cranes and containers",
+    "heroSlide5Title": "Ports & Containers",
+    "heroSlide5Caption": "Practical experience managing cargo movement inside ports and yards.",
     "heroImport": "Import",
     "heroExport": "Global Suppliers",
     "heroLogistics": "Shipping",
@@ -227,7 +242,7 @@
     "item2Question": "How long has Green Light been in business?",
     "item2Answer": "Green Light is a simple partnership company founded in 1996, with extensive experience executing work with precision and full adherence to quality standards.",
     "item3Question": "How do I request a quote?",
-    "item3Answer": "Fill out the quote request form on our website, contact us on WhatsApp at 00201002974960, or email info@greenlight-eg.com.",
+    "item3Answer": "Fill out the quote request form on our website, contact us on WhatsApp at +201002974960, or email info@greenlight-eg.com.",
     "item4Question": "Do you handle customs clearance and shipping?",
     "item4Answer": "Yes. We provide integrated logistics including sea and land freight, customs clearance, warehousing, and delivery to your warehouse or doorstep via Egypt's ports.",
     "item5Question": "Do you import raw materials for factories?",
@@ -235,7 +250,7 @@
     "item6Question": "Do you build detergent factories?",
     "item6Answer": "Yes. We offer planning, engineering design, and turnkey construction of detergent plants — from feasibility studies through execution and commissioning.",
     "item7Question": "Where is your office located?",
-    "item7Answer": "Our office is in Egypt – New Damietta, Al Hawey 1, Magowerya. Call us at 00201203004406 or 00201002974960."
+    "item7Answer": "Our office is in Egypt – New Damietta, Al Hawey 1, Magowerya. Call us at +201203004406 or +201002974960."
   },
   "quote": {
     "title": "Request a Shipping Quote",
@@ -350,6 +365,9 @@
     "previousTestimonial": "Previous testimonial",
     "nextTestimonial": "Next testimonial",
     "goToTestimonial": "Go to testimonial {{index}}",
+    "previousSlide": "Previous slide",
+    "nextSlide": "Next slide",
+    "goToSlide": "Go to slide {{index}}",
     "countryCode": "Country code"
   }
 }

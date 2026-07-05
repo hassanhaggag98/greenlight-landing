@@ -1,6 +1,7 @@
 export { SocialLinksSection } from './SocialLinksSection'
 export { AnimatedCounter } from './AnimatedCounter'
 export { HeroBanner } from './HeroBanner'
+export { HeroSlider } from './HeroSlider'
 export { HeroSection } from './HeroSection'
 export { TestimonialCarousel } from './TestimonialCarousel'
 export { Timeline } from './Timeline'
