@@ -99,7 +99,7 @@ export function Navbar() {
             />
           </Link>
 
-          <NavbarTicker className="min-w-0 flex-1 xl:hidden" />
+          <NavbarTicker className="hidden min-w-0 flex-1 md:block xl:hidden" />
 
           <nav className="hidden min-w-0 flex-1 items-center justify-center gap-1 xl:flex">
             {PRIMARY_NAV.map((link) => (

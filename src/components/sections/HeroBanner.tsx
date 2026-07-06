@@ -155,14 +155,14 @@ export function HeroBanner({
             )}
           </motion.div>
 
-          <motion.div variants={heroCta} className="mt-6 flex flex-wrap justify-center gap-2 md:hidden">
+          <motion.div variants={heroCta} className="mt-6 grid grid-cols-2 gap-2 md:hidden">
             {FLOATING_SERVICES.map(({ icon: Icon, labelKey }) => (
               <span
                 key={labelKey}
-                className="inline-flex items-center gap-1.5 rounded-full border border-primary-green/15 bg-surface-elevated px-3 py-1.5 text-xs font-medium text-foreground/80 shadow-sm dark:border-white/10 dark:bg-white/5 dark:text-white/85"
+                className="hero-service-pill inline-flex items-center justify-center gap-2 rounded-xl border border-primary-green/25 bg-white px-3 py-2.5 text-xs font-semibold text-dark-navy shadow-sm dark:border-white/15 dark:bg-white/10 dark:text-white"
               >
-                <Icon className="size-3.5 text-primary-green dark:text-accent-on-dark" />
-                {t(labelKey)}
+                <Icon className="size-4 shrink-0 text-primary-green dark:text-accent-on-dark" />
+                <span className="leading-tight">{t(labelKey)}</span>
               </span>
             ))}
           </motion.div>

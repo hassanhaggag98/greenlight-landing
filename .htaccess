@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# لو الملف أو الفولدر موجود يفتحه عادي
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# أي Route في React يرجع للـ index.html
+RewriteRule ^ index.html [L]
