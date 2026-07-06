@@ -90,7 +90,7 @@ export function HeroBanner({
         />
       )}
 
-      <div className="relative mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12 lg:px-8 lg:py-20 xl:py-24">
+      <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-8 px-4 py-8 sm:px-6 sm:py-12 lg:grid-cols-2 lg:gap-12 lg:px-8 lg:py-20 xl:py-24">
         <motion.div
           className="hero-copy min-w-0 text-center lg:text-start"
           variants={heroContainer}
@@ -111,19 +111,21 @@ export function HeroBanner({
             )}
           </motion.div>
 
-          <motion.h1
-            variants={heroTitle}
-            className="hero-heading text-balance text-[1.85rem] font-extrabold leading-[1.15] tracking-tight sm:text-4xl md:text-5xl xl:text-[3.2rem]"
-          >
-            {title}
-          </motion.h1>
+          <div className="hero-copy-body">
+            <motion.h1
+              variants={heroTitle}
+              className="hero-heading text-balance text-[1.85rem] font-extrabold leading-[1.15] tracking-tight sm:text-4xl md:text-5xl xl:text-[3.2rem]"
+            >
+              {title}
+            </motion.h1>
 
-          <motion.p
-            variants={heroSubtitle}
-            className="hero-subcopy mx-auto mt-4 max-w-xl text-pretty text-[0.95rem] font-medium leading-[1.8] sm:mt-5 sm:text-lg lg:mx-0"
-          >
-            {subtitle}
-          </motion.p>
+            <motion.p
+              variants={heroSubtitle}
+              className="hero-subcopy mx-auto mt-4 max-w-xl text-pretty text-[0.95rem] font-medium leading-[1.8] sm:mt-5 sm:text-lg lg:mx-0"
+            >
+              {subtitle}
+            </motion.p>
+          </div>
 
           <motion.div
             variants={heroCta}
@@ -167,10 +169,10 @@ export function HeroBanner({
         </motion.div>
 
         <motion.div
-          className="mt-8 min-w-0 lg:mt-0"
-          initial={motionOff ? false : { opacity: 0, x: 32, scale: 0.97 }}
-          animate={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{ duration: motionOff ? 0 : 0.85, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-8 w-full min-w-0 overflow-hidden lg:mt-0"
+          initial={motionOff ? false : { opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: motionOff ? 0 : 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
         >
           <HeroSlider />
         </motion.div>

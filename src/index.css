@@ -196,26 +196,29 @@ p {
   position: relative;
 }
 
-.hero-copy::before {
+.hero-copy-body {
+  position: relative;
+}
+
+.hero-copy-body::before {
   content: '';
   position: absolute;
   inset-inline-start: 0;
-  top: 0.35rem;
+  top: 0.4rem;
   width: 4px;
-  height: 3.5rem;
+  height: 3.25rem;
   border-radius: 999px;
   background: linear-gradient(180deg, var(--primary-green), var(--gold));
   opacity: 0;
 }
 
 @media (min-width: 1024px) {
-  .hero-copy::before {
-    opacity: 1;
+  .hero-copy-body {
+    padding-inline-start: 1.25rem;
   }
 
-  [dir='rtl'] .hero-copy::before {
-    inset-inline-start: auto;
-    inset-inline-end: 0;
+  .hero-copy-body::before {
+    opacity: 1;
   }
 }
 
@@ -373,22 +376,11 @@ p {
   .animate-route-flow,
   .animate-hub-pulse,
   .nav-ticker-track,
-  .hero-slider-shell,
   .hero-slider-progress,
   .loader-green-glow,
   .loader-logo-breathe,
   .loader-ring-pulse {
     animation: none !important;
-  }
-}
-
-@keyframes hero-slider-float {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-8px) rotate(-0.35deg);
   }
 }
 
@@ -401,8 +393,58 @@ p {
   }
 }
 
-.hero-slider-shell {
-  animation: hero-slider-float 7s ease-in-out infinite;
+.hero-slider-card {
+  isolation: isolate;
+}
+
+.hero-slider-nav {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.hero-slider-thumbs {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hero-slider-thumbs::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-slider-thumb-active {
+  box-shadow: 0 4px 16px rgba(21, 107, 66, 0.25);
+}
+
+.dark .hero-slider-thumb-active {
+  box-shadow: 0 4px 16px rgba(110, 207, 152, 0.2);
+}
+
+.hero-slider-caption-block {
+  width: 100%;
+}
+
+.hero-slider-title {
+  color: var(--dark-navy);
+}
+
+.dark .hero-slider-title {
+  color: #ffffff;
+}
+
+.hero-slider-caption {
+  color: color-mix(in srgb, var(--dark-navy) 88%, var(--muted));
+}
+
+.dark .hero-slider-caption {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+[dir='rtl'] .hero-slider-caption {
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+[dir='ltr'] .hero-slider-caption {
+  line-height: 1.65;
 }
 
 .hero-slider-progress {

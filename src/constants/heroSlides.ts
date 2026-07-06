@@ -1,5 +1,11 @@
 export const HERO_SLIDES = [
   {
+    src: '/images/hero/slide-9.png',
+    altKey: 'home.heroSlide9Alt',
+    titleKey: 'home.heroSlide9Title',
+    captionKey: 'home.heroSlide9Caption',
+  },
+  {
     src: '/images/hero/slide-1.png',
     altKey: 'home.heroSlide1Alt',
     titleKey: 'home.heroSlide1Title',
@@ -28,5 +34,71 @@ export const HERO_SLIDES = [
     altKey: 'home.heroSlide5Alt',
     titleKey: 'home.heroSlide5Title',
     captionKey: 'home.heroSlide5Caption',
+  },
+  {
+    src: '/images/hero/slide-6.png',
+    altKey: 'home.heroSlide6Alt',
+    titleKey: 'home.heroSlide6Title',
+    captionKey: 'home.heroSlide6Caption',
+  },
+  {
+    src: '/images/hero/slide-7.png',
+    altKey: 'home.heroSlide7Alt',
+    titleKey: 'home.heroSlide7Title',
+    captionKey: 'home.heroSlide7Caption',
+  },
+  {
+    src: '/images/hero/slide-8.png',
+    altKey: 'home.heroSlide8Alt',
+    titleKey: 'home.heroSlide8Title',
+    captionKey: 'home.heroSlide8Caption',
+  },
+  {
+    src: '/images/hero/slide-10.png',
+    altKey: 'home.heroSlide10Alt',
+    titleKey: 'home.heroSlide10Title',
+    captionKey: 'home.heroSlide10Caption',
+  },
+  {
+    src: '/images/hero/slide-11.png',
+    altKey: 'home.heroSlide11Alt',
+    titleKey: 'home.heroSlide11Title',
+    captionKey: 'home.heroSlide11Caption',
+  },
+  {
+    src: '/images/hero/slide-12.png',
+    altKey: 'home.heroSlide12Alt',
+    titleKey: 'home.heroSlide12Title',
+    captionKey: 'home.heroSlide12Caption',
+  },
+  {
+    src: '/images/hero/slide-13.png',
+    altKey: 'home.heroSlide13Alt',
+    titleKey: 'home.heroSlide13Title',
+    captionKey: 'home.heroSlide13Caption',
+  },
+  {
+    src: '/images/hero/slide-14.png',
+    altKey: 'home.heroSlide14Alt',
+    titleKey: 'home.heroSlide14Title',
+    captionKey: 'home.heroSlide14Caption',
+  },
+  {
+    src: '/images/hero/slide-15.png',
+    altKey: 'home.heroSlide15Alt',
+    titleKey: 'home.heroSlide15Title',
+    captionKey: 'home.heroSlide15Caption',
+  },
+  {
+    src: '/images/hero/slide-16.png',
+    altKey: 'home.heroSlide16Alt',
+    titleKey: 'home.heroSlide16Title',
+    captionKey: 'home.heroSlide16Caption',
+  },
+  {
+    src: '/images/hero/slide-17.png',
+    altKey: 'home.heroSlide17Alt',
+    titleKey: 'home.heroSlide17Title',
+    captionKey: 'home.heroSlide17Caption',
   },
 ] as const
