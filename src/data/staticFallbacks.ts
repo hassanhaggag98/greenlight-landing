@@ -40,6 +40,27 @@ export function getStaticServices(t: TFunction): Service[] {
       short_description: t('home.fallbackService4Desc'),
       description: t('home.fallbackService4Desc'),
     },
+    {
+      id: 5,
+      title: t('home.fallbackService5Title'),
+      slug: 'trademark-registration',
+      short_description: t('home.fallbackService5Desc'),
+      description: t('home.fallbackService5Desc'),
+    },
+    {
+      id: 6,
+      title: t('home.fallbackService6Title'),
+      slug: 'foreign-factory-registration',
+      short_description: t('home.fallbackService6Desc'),
+      description: t('home.fallbackService6Desc'),
+    },
+    {
+      id: 7,
+      title: t('home.fallbackService7Title'),
+      slug: 'import-approvals',
+      short_description: t('home.fallbackService7Desc'),
+      description: t('home.fallbackService7Desc'),
+    },
   ]
 }
 
@@ -48,20 +69,32 @@ export function getStaticIndustries(t: TFunction): Industry[] {
     {
       id: 1,
       name: t('industries.fallback1Name'),
-      slug: 'food-beverage',
+      slug: 'food-sector',
       description: t('industries.fallback1Desc'),
     },
     {
       id: 2,
       name: t('industries.fallback2Name'),
-      slug: 'construction',
+      slug: 'machinery-factory-equipment',
       description: t('industries.fallback2Desc'),
     },
     {
       id: 3,
       name: t('industries.fallback3Name'),
-      slug: 'industrial',
+      slug: 'chemical-materials',
       description: t('industries.fallback3Desc'),
+    },
+    {
+      id: 4,
+      name: t('industries.fallback4Name'),
+      slug: 'chinese-auto-spare-parts',
+      description: t('industries.fallback4Desc'),
+    },
+    {
+      id: 5,
+      name: t('industries.fallback5Name'),
+      slug: 'lighting-parts',
+      description: t('industries.fallback5Desc'),
     },
   ]
 }

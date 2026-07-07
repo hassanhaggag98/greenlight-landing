@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Globe, Mail, MapPin, Phone } from 'lucide-react'
 import {
   CONTACT_EMAIL,
+  CONTACT_MAPS_URL,
   CONTACT_PHONES,
   CONTACT_WEBSITE,
   CONTACT_WEBSITE_URL,
@@ -70,7 +71,14 @@ export function ContactInfo({ className, variant = 'light', layout = 'stack' }: 
   const items = (
     <>
       <Item icon={MapPin} label={t('contact.addressLabel')} className={layout === 'grid' ? 'sm:col-span-2' : undefined}>
-        <span className={valueClass}>{t('footer.location')}</span>
+        <a
+          href={CONTACT_MAPS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn('inline-block transition-colors hover:text-gold', valueClass)}
+        >
+          {t('footer.location')}
+        </a>
       </Item>
 
       <Item icon={Phone} label={t('contact.phonesLabel')}>

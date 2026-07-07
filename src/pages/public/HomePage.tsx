@@ -37,8 +37,8 @@ export default function HomePage() {
 
   const metrics = [
     { value: 30, suffix: '+', label: t('home.statYears'), hint: t('home.landingMetricYears'), icon: BadgeCheck },
-    { value: 5000, suffix: '+', label: t('home.statShipments'), hint: t('home.landingMetricShipments'), icon: PackageCheck },
-    { value: 8, suffix: '+', label: t('home.statPorts'), hint: t('home.landingMetricPorts'), icon: Anchor },
+    { value: 15000, suffix: '+', label: t('home.statShipments'), hint: t('home.landingMetricShipments'), icon: PackageCheck },
+    { value: 4, suffix: '', label: t('home.statPorts'), hint: t('home.landingMetricPorts'), icon: Anchor },
     { value: 24, suffix: '/7', label: t('home.networkLogistics'), hint: t('home.landingMetricSupport'), icon: Clock3 },
   ]
 

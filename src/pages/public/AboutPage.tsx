@@ -6,6 +6,15 @@ import { PageHeader, SEO } from '@/components/common'
 import { Card, CardContent, LoadingSpinner } from '@/components/ui'
 import { ROUTES } from '@/constants'
 
+const COUNTRY_KEYS = [
+  'about.countryChina',
+  'about.countryTurkey',
+  'about.countryIndonesia',
+  'about.countryVietnam',
+  'about.countryIndia',
+  'about.countryGuatemala',
+] as const
+
 export default function AboutPage() {
   const { t, i18n } = useTranslation()
   const fallback = getStaticAbout(t)
@@ -37,16 +46,42 @@ export default function AboutPage() {
           <Card>
             <CardContent className="pt-6">
               <h2 className="text-lg font-semibold text-primary-green">{t('about.mission')}</h2>
-              <p className="mt-2 text-muted">{about.mission}</p>
+              <p className="mt-3 whitespace-pre-line text-sm leading-relaxed text-muted sm:text-base">{about.mission}</p>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="pt-6">
               <h2 className="text-lg font-semibold text-gold">{t('about.vision')}</h2>
-              <p className="mt-2 text-muted">{about.vision}</p>
+              <p className="mt-3 whitespace-pre-line text-sm leading-relaxed text-muted sm:text-base">{about.vision}</p>
             </CardContent>
           </Card>
         </div>
+
+        <Card className="mt-6">
+          <CardContent className="pt-6">
+            <h2 className="text-lg font-semibold text-primary-green">{t('about.internationalTradeTitle')}</h2>
+            <p className="mt-3 whitespace-pre-line text-sm leading-relaxed text-muted sm:text-base">
+              {t('about.internationalTradeText')}
+            </p>
+          </CardContent>
+        </Card>
+
+        <Card className="mt-6">
+          <CardContent className="pt-6">
+            <h2 className="text-lg font-semibold text-foreground">{t('about.countriesTitle')}</h2>
+            <ul className="mt-4 flex flex-wrap gap-2">
+              {COUNTRY_KEYS.map((key) => (
+                <li
+                  key={key}
+                  className="rounded-full border border-border bg-accent-soft px-3 py-1.5 text-sm font-semibold text-primary-green"
+                >
+                  {t(key)}
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+
         {about.values && about.values.length > 0 && (
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {about.values.map((v) => (

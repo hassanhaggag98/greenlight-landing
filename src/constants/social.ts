@@ -31,14 +31,14 @@ export function getSocialLinks(t: TFunction): SocialLink[] {
     },
     {
       id: 'instagram',
-      href: 'https://www.instagram.com/greenlightgroup',
+      href: 'https://www.instagram.com/green.light.co25',
       label: 'Instagram',
       cta: t('contact.socialCtaInstagram'),
       color: '#E4405F',
     },
     {
       id: 'linkedin',
-      href: 'https://www.linkedin.com/company/greenlightgroup',
+      href: 'https://www.linkedin.com/in/mohamed-helal-20bb5695/',
       label: 'LinkedIn',
       cta: t('contact.socialCtaLinkedin'),
       color: '#0A66C2',

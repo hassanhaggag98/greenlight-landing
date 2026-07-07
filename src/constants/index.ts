@@ -33,11 +33,14 @@ export const CONTACT_WEBSITE = 'www.greenlight-eg.com'
 export const CONTACT_WEBSITE_URL = 'https://www.greenlight-eg.com'
 
 export const CONTACT_PHONES = [
-  { display: '+201203004406', tel: '+201203004406' },
-  { display: '+201002974960', tel: '+201002974960' },
+  { display: '01000307992', tel: '+201000307992' },
+  { display: '01203004406', tel: '+201203004406' },
+  { display: '01551660168', tel: '+201551660168' },
 ] as const
 
 export const WHATSAPP_NUMBER = '201002974960'
-export const WHATSAPP_DISPLAY = '+201002974960'
+export const WHATSAPP_DISPLAY = '01000307992'
+
+export const CONTACT_MAPS_URL = 'https://maps.app.goo.gl/grz1q8EjoZ4Tqmmq5'
 
 export const DASHBOARD_URL = import.meta.env.VITE_DASHBOARD_URL ?? ''

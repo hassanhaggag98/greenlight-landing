@@ -26,13 +26,15 @@ const HUB_ID = 'egypt'
 
 const NODE_DEFS = [
   { id: HUB_ID, x: 542, y: 278, labelKey: 'home.countryEgypt', flag: '🇪🇬', isHub: true },
-  { id: 'uae', x: 592, y: 252, labelKey: 'home.countryUae', flag: '🇦🇪' },
-  { id: 'sa', x: 568, y: 242, labelKey: 'home.countrySa', flag: '🇸🇦' },
-  { id: 'usa', x: 218, y: 228, labelKey: 'home.countryUsa', flag: '🇺🇸' },
-  { id: 'uk', x: 488, y: 178, labelKey: 'home.countryUk', flag: '🇬🇧' },
-  { id: 'sg', x: 762, y: 318, labelKey: 'home.countrySg', flag: '🇸🇬' },
+  { id: 'cn', x: 780, y: 210, labelKey: 'home.countryChina', flag: '🇨🇳' },
+  { id: 'in', x: 700, y: 260, labelKey: 'home.countryIndia', flag: '🇮🇳' },
+  { id: 'id', x: 820, y: 320, labelKey: 'home.countryIndonesia', flag: '🇮🇩' },
+  { id: 'vn', x: 760, y: 270, labelKey: 'home.countryVietnam', flag: '🇻🇳' },
+  { id: 'gt', x: 200, y: 290, labelKey: 'home.countryGuatemala', flag: '🇬🇹' },
+  { id: 'tr', x: 558, y: 208, labelKey: 'home.countryTurkey', flag: '🇹🇷' },
   { id: 'au', x: 878, y: 398, labelKey: 'home.countryAu', flag: '🇦🇺' },
   { id: 'de', x: 512, y: 188, labelKey: 'home.countryDe', flag: '🇩🇪' },
+  { id: 'uae', x: 592, y: 252, labelKey: 'home.countryUae', flag: '🇦🇪' },
 ] as const
 
 const CONTINENT_DOTS: Array<[number, number]> = [
@@ -358,7 +360,7 @@ export function WorldMap({ countries, className }: WorldMapProps) {
         {[
           { value: `${nodes.length - 1}+`, label: t('home.networkMarkets') },
           { value: '24/7', label: t('home.networkLogistics') },
-          { value: '3', label: t('home.statPorts') },
+          { value: '4', label: t('home.statPorts') },
         ].map((item) => (
           <div key={item.label} className="min-w-0 text-center">
             <p className="text-sm font-bold leading-none text-primary-green sm:text-base lg:text-lg">{item.value}</p>
