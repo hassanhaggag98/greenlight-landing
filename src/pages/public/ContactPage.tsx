@@ -4,11 +4,11 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { useTranslation } from 'react-i18next'
 import toast from 'react-hot-toast'
-import { publicApi } from '@/api/public.api'
 import { ContactInfo, PageHeader, SEO } from '@/components/common'
 import { SocialLinksSection } from '@/components/sections'
 import { Button, Card, CardContent, Input, PhoneInput, Textarea } from '@/components/ui'
-import { CONTACT_EMAIL, ROUTES } from '@/constants'
+import { ROUTES } from '@/constants'
+import { openMailto } from '@/utils/mailto'
 
 type ContactForm = {
   name: string
@@ -16,14 +16,6 @@ type ContactForm = {
   phone?: string
   subject: string
   message: string
-}
-
-function buildMailtoLink(data: ContactForm) {
-  const subject = encodeURIComponent(data.subject)
-  const body = encodeURIComponent(
-    `Name: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone ?? '—'}\n\n${data.message}`,
-  )
-  return `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
 }
 
 export default function ContactPage() {
@@ -49,16 +41,15 @@ export default function ContactPage() {
     resolver: zodResolver(contactSchema),
   })
 
-  const onSubmit = async (data: ContactForm) => {
-    try {
-      await publicApi.submitContact(data)
-      toast.success(t('contact.success'))
-      reset()
-    } catch {
-      window.location.href = buildMailtoLink(data)
-      toast.success(t('contact.fallbackSuccess'))
-      reset()
-    }
+  const onSubmit = (data: ContactForm) => {
+    openMailto(data.subject, {
+      Name: data.name,
+      Email: data.email,
+      Phone: data.phone,
+      Message: data.message,
+    })
+    toast.success(t('contact.fallbackSuccess'))
+    reset()
   }
 
   return (

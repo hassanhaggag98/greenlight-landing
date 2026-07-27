@@ -4,10 +4,10 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { useTranslation } from 'react-i18next'
 import toast from 'react-hot-toast'
-import { publicApi } from '@/api/public.api'
 import { PageHeader, SEO } from '@/components/common'
 import { Button, Card, CardContent, Input, PhoneInput, Textarea } from '@/components/ui'
 import { ROUTES } from '@/constants'
+import { openMailto } from '@/utils/mailto'
 
 type FormData = {
   name: string
@@ -34,14 +34,16 @@ export default function RequestQuotePage() {
     resolver: zodResolver(schema),
   })
 
-  const onSubmit = async (data: FormData) => {
-    try {
-      await publicApi.submitQuoteRequest(data)
-      toast.success(t('quote.success'))
-      reset()
-    } catch {
-      toast.error(t('common.error'))
-    }
+  const onSubmit = (data: FormData) => {
+    openMailto(t('quote.title'), {
+      Name: data.name,
+      Email: data.email,
+      Phone: data.phone,
+      Company: data.company,
+      Message: data.message,
+    })
+    toast.success(t('contact.fallbackSuccess'))
+    reset()
   }
 
   return (
